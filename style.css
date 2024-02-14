@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b1522;
+    flex-direction: column;
+    border: 25px solid;
+    border-image-source: linear-gradient(to right, #f20044, #c3da45);
+    border-image-slice: 1;
+}
+
+.heart{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: #f20044;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px #f20044;
+    animation: heart 0.6s linear infinite;
+    margin-bottom: 50px; /* Mover el corazón hacia abajo */
+}
+
+@keyframes heart{
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg) scale(1.0);
+    }
+    100%{
+        transform: rotate(-45deg) scale(1.8);
+    }
+}
+
+.heart:before, .heart:after{
+    content : '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    border-radius: 50px;
+    box-shadow: 10px 10px 90px #f20044;
+}
+
+.heart:before{
+    top: -50%;
+    box-shadow: -10px -10px 90px #f20044;
+}
+
+.heart:after{
+    right: -50%;
+}
+
+.message{
+    font-family: 'Parisienne', cursive; /* Fuente personalizada */
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    animation: message 2s linear infinite; /* Animación para el mensaje */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+@keyframes message{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@media (max-width: 600px) {
+    .heart{
+      width: 50px;
+      height: 50px;
+    }
+  
+    .message{
+      font-size: 18px;
+    }
+  }
